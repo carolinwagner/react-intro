@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import Entry from "./Entry";
-import ToDo from "./ToDo";
+import ToDoEntry from "./ToDoEntry";
+import ToDoList from "./ToDoList";
 
 export default function App() {
   return (
@@ -9,10 +9,8 @@ export default function App() {
       <header>
         <h1>To Dos</h1>
       </header>
-      <Entry />
-      <ToDo text="Make a to do app" />
-      <ToDo text="Add to do's" completed />
-      <ToDo text="Complete everything" />
+      <ToDoEntry />
+      <ToDoList />
     </div>
   );
 }

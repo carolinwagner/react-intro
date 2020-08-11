@@ -1,10 +1,11 @@
 import React from "react";
 import ButtonOk from "./ButtonOk";
 import ButtonCancel from "./ButtonCancel";
+import "./ToDoEntry.css";
 
 export default function Entry() {
   return (
-    <div>
+    <div className="ToDoEntry">
       <input></input>
       <ButtonOk />
       <ButtonCancel />
