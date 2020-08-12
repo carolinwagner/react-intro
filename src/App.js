@@ -4,16 +4,19 @@ import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
 export default function App() {
-  const [todos, setTodos] = useState(["Hallo"]);
+  const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
   function addTodo() {
-    console.log("It works");
     setTodos([...todos, inputValue]);
+    setInputValue("");
   }
 
-  function saveInput(element) {
-    console.log(element.target.value);
+  function deleteTodo(text) {
+    setTodos(todos.filter((todo) => todo !== text));
+  }
+
+  function saveInput(element) {  
     setInputValue(element.target.value);
   }
 
@@ -21,9 +24,9 @@ export default function App() {
     <>
       <h1>To Dos</h1>
       <TodoForm onSubmit={addTodo} onChange={saveInput} value={inputValue} />
-      <ul>
+      <ul className="TodoList">
         {todos.map((todo, index) => (
-          <Todo text={todo} key={index} />
+          <Todo text={todo} key={index} onDelete={deleteTodo} />
         ))}
       </ul>
     </>
