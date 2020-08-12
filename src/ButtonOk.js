@@ -1,6 +1,10 @@
 import React from "react";
 import "./ButtonOk.css";
 
-export default function ButtonOk() {
-  return <button className="ButtonOk">Add</button>;
+export default function ButtonOk({ onClickDoThis }) {
+  return (
+    <button onClick={onClickDoThis} className="ButtonOk">
+      Add
+    </button>
+  );
 }
