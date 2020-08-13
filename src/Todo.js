@@ -3,9 +3,10 @@ import "./Todo.css";
 
 export default function Todo({ text, onDelete }) {
   const [isCompleted, setIsCompleted] = useState(false);
+  const switchingClassName = isCompleted ? "completed" : "";
   return (
     <li>
-      <label className={isCompleted ? "completed" : ""}>
+      <label className={switchingClassName}>
         <input
           checked={isCompleted}
           type="checkbox"
